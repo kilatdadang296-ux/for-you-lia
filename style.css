@@ -21,6 +21,8 @@ body {
   justify-content: center;
   min-height: 80vh;
   text-align: center;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 .tap-hint {
@@ -37,6 +39,11 @@ body {
   border-radius: 24px;
   max-width: 400px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card-cover:hover {
+  transform: scale(1.02);
 }
 
 .flower-icon {
@@ -68,10 +75,11 @@ h1 em, h2 em {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  animation: fadeIn 0.8s ease forwards;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .inner-card {
@@ -180,3 +188,7 @@ p {
   50% { opacity: 0.5; }
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
